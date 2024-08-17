@@ -1,0 +1,43 @@
+#pragma once
+
+#include<memory>
+#include<cuda.h>
+#include<cuda_runtime.h>
+#include<cstdio>
+#include"helper.cuh"
+
+namespace CESpGEMM
+{
+template<typename T>
+class Bf_Vec{};
+template<typename T>
+class Bf_Vec2
+{
+private:
+  std::unique_ptr<T[]>values;
+  uint32_t n;
+public:
+  Bf_Vec2(size_t n):values(new T[n]),n(n){}
+  Bf_Vec2():values(nullptr), n(0){}
+  ~Bf_Vec2()=default;
+  Bf_Vec2(const Bf_Vec2& v) : values(new T[v.n]), n(v.n){
+    for(int i=0;i<n;i++){
+      values[i] = v.values[i];
+    }
+  }
+  inline void resize(size_t nElems){
+    std::unique_ptr<T[]>tmp(new T[nElems]);
+    values.swap(tmp);
+    n = nElems;
+  }
+  inline T* get(){return values.get();}
+  inline T* data(){return values.get();}
+  inline uint32_t size(){return n;}
+  inline T& operator[](int idx){
+    return values[idx];
+  }
+} ;
+
+  
+} // namespace CESpGEMM
+

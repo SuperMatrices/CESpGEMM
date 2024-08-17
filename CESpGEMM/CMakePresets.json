@@ -1,0 +1,59 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 19
+  },
+  "configurePresets": [
+    {
+      "name": "P1",
+      "hidden": false,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build1",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "/usr/local/bin/g++",
+        "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
+        "CMAKE_VERBOSE_MAKEFILE":"ON",
+        "CMAKE_CUDA_FLAGS": "-ccbin /usr/local/bin/g++",
+        "CMAKE_BUILD_TYPE": "Release",
+        "NUM_DEVICES": "1",
+        "CUDA_ARCH": "75",
+        "MKLROOT": "/home/zhangcheng/intel/oneapi/mkl/2024.1"
+      }
+    },
+    {
+      "name": "TC1",
+      "hidden": false,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/preproc1",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "/usr/local/bin/g++",
+        "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
+        "CMAKE_VERBOSE_MAKEFILE":"ON",
+        "CMAKE_CUDA_FLAGS": "-ccbin /usr/local/bin/g++",
+        "CMAKE_BUILD_TYPE": "Release",
+        "NUM_DEVICES": "1",
+        "CUDA_ARCH": "75",
+        "TEST_PREPROC": "1",
+        "MKLROOT": "/home/zhangcheng/intel/oneapi/mkl/2024.1"
+      }
+    },
+    {
+      "name": "Debug1",
+      "hidden": false,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/debug1",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "/usr/local/bin/g++",
+        "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
+        "CMAKE_VERBOSE_MAKEFILE":"ON",
+        "CMAKE_CUDA_FLAGS": "-ccbin /usr/local/bin/g++",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "NUM_DEVICES": "1",
+        "CUDA_ARCH": "75",
+        "MKLROOT": "/home/zhangcheng/intel/oneapi/mkl/2024.1"
+      }
+    }
+
+  ]
+}
