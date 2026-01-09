@@ -1,0 +1,162 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 19
+  },
+  "configurePresets": [
+    { 
+      "name": "base",
+      "hidden": true,
+      "cacheVariables": {
+        "GPU_ARCH": "75"
+      }
+    },
+
+    {
+      "name": "P1",
+      "hidden": false,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build_1GPU",
+      "inherits": ["base"],
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+        "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
+        "CMAKE_VERBOSE_MAKEFILE":"ON",
+        "CMAKE_CUDA_FLAGS": "-ccbin /usr/bin/g++",
+        "CMAKE_BUILD_TYPE": "Release",
+        "NUM_DEVICES": "1",
+        "DEBUG_LEVEL": "1"
+      }
+    },
+    {
+      "name": "P2",
+      "hidden": false,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build_2GPU",
+      "inherits": ["base"],
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+        "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
+        "CMAKE_VERBOSE_MAKEFILE":"ON",
+        "CMAKE_CUDA_FLAGS": "-ccbin /usr/bin/g++",
+        "CMAKE_BUILD_TYPE": "Release",
+        "NUM_DEVICES": "2",
+        "DEBUG_LEVEL": "3" 
+      }
+    },
+    {
+      "name": "P3",
+      "hidden": false,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build_3GPU",
+      "inherits": ["base"],
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+        "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
+        "CMAKE_VERBOSE_MAKEFILE":"ON",
+        "CMAKE_CUDA_FLAGS": "-ccbin /usr/bin/g++",
+        "CMAKE_BUILD_TYPE": "Release",
+        "NUM_DEVICES": "3",
+        "DEBUG_LEVEL": "3"
+      }
+    },
+    {
+      "name": "P4",
+      "hidden": false,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build_4GPU",
+      "inherits": ["base"],
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+        "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
+        "CMAKE_VERBOSE_MAKEFILE":"ON",
+        "CMAKE_CUDA_FLAGS": "-ccbin /usr/bin/g++",
+        "CMAKE_BUILD_TYPE": "Release",
+        "NUM_DEVICES": "4",
+        "DEBUG_LEVEL": "3"
+      }
+    },
+    {
+      "name": "TC1",
+      "hidden": false,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/preproc1",
+      "inherits": ["base"],
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+        "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
+        "CMAKE_VERBOSE_MAKEFILE":"ON",
+        "CMAKE_CUDA_FLAGS": "-ccbin /usr/bin/g++",
+        "CMAKE_BUILD_TYPE": "Release",
+        "NUM_DEVICES": "1",
+        "TEST_PREPROC": "1"
+      }
+    },
+    {
+      "name": "Debug1",
+      "hidden": false,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/debug_1GPU",
+      "inherits": ["base"],
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+        "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
+        "CMAKE_VERBOSE_MAKEFILE":"ON",
+        "CMAKE_CUDA_FLAGS": "-ccbin /usr/bin/g++",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "NUM_DEVICES": "1",
+        "DEBUG_LEVEL": "3"
+      }
+    },
+    {
+      "name": "Debug2",
+      "hidden": false,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/debug_2GPU",
+      "inherits": ["base"],
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+        "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
+        "CMAKE_VERBOSE_MAKEFILE":"ON",
+        "CMAKE_CUDA_FLAGS": "-ccbin /usr/bin/g++",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "NUM_DEVICES": "2",
+        "DEBUG_LEVEL": "3"
+      }
+    },
+    {
+      "name": "Debug3",
+      "hidden": false,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/debug_3GPU",
+      "inherits": ["base"],
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+        "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
+        "CMAKE_VERBOSE_MAKEFILE":"ON",
+        "CMAKE_CUDA_FLAGS": "-ccbin /usr/bin/g++",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "NUM_DEVICES": "3",
+        "DEBUG_LEVEL": "3"
+      }
+    },
+    {
+      "name": "Debug4",
+      "hidden": false,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/debug_4GPU",
+      "inherits": ["base"],
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "/usr/bin/g++",
+        "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
+        "CMAKE_VERBOSE_MAKEFILE":"ON",
+        "CMAKE_CUDA_FLAGS": "-ccbin /usr/bin/g++",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "NUM_DEVICES": "4",
+        "DEBUG_LEVEL": "3"
+      }
+    }
+
+  ]
+}
